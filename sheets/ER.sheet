@@ -19,5 +19,11 @@
     <object name="ER - Participation">
       <description>Participation</description>
     </object>
+    <object name="ER - Specialization/Generalization">
+      <description>Specialization/Generalization</description>
+    </object>
+    <object name="ER - Inheritance">
+      <description>Inheritance</description>
+    </object>
   </contents>
 </sheet>

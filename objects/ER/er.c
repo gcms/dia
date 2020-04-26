@@ -32,6 +32,8 @@ extern DiaObjectType entity_type;
 extern DiaObjectType relationship_type;
 extern DiaObjectType attribute_type;
 extern DiaObjectType participation_type;
+extern DiaObjectType specialization_type;
+extern DiaObjectType inheritance_type;
 
 DIA_PLUGIN_CHECK_INIT
 
@@ -47,6 +49,8 @@ dia_plugin_init(PluginInfo *info)
   object_register_type(&relationship_type);
   object_register_type(&attribute_type);
   object_register_type(&participation_type);
+  object_register_type(&specialization_type);
+  object_register_type(&inheritance_type);
 
   return DIA_PLUGIN_INIT_OK;
 }

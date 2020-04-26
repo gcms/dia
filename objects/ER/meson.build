@@ -3,6 +3,8 @@ sources = files(
     'relationship.c',
     'attribute.c',
     'participation.c',
+    'specialization.c',
+    'inheritance.c',
     'er.c'
 )
 

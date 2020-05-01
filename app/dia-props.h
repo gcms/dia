@@ -21,16 +21,17 @@
 
 #pragma once
 
+#include "dia-autoptr.h"
 #include "diagram.h"
 
 #include <gtk/gtk.h>
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (GtkDialog, g_object_unref)
 
 #define DIA_TYPE_DIAGRAM_PROPERTIES_DIALOG dia_diagram_properties_dialog_get_type ()
 G_DECLARE_DERIVABLE_TYPE (DiaDiagramPropertiesDialog, dia_diagram_properties_dialog, DIA, DIAGRAM_PROPERTIES_DIALOG, GtkDialog)
 
 struct _DiaDiagramPropertiesDialogClass {
+  /*< private >*/
   GtkDialogClass parent;
 };
 

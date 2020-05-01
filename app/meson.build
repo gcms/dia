@@ -11,6 +11,9 @@ dia_sources = [
     'dia-change.h',
     'object_ops.c',
 
+    'dia-builder.c',
+    'dia-builder.h',
+
     'layer-editor/dia-layer-list.c',
     'layer-editor/dia-layer-list.h',
     'layer-editor/dia-layer-widget.c',
@@ -49,7 +52,7 @@ dia_sources = [
     'cut_n_paste.c',
     'ruler.c',
     'tool.c',
-    'diapagelayout.c',
+    'dia-page-layout.c',
     'pagesetup.c',
     'filedlg.c',
     'find-and-replace.c',
@@ -79,7 +82,8 @@ dia_sources = [
     'textedit_tool.c',
 ]
 
-sources += gnome.mkenums_simple('dia-app-enums', sources: 'exit_dialog.h')
+dia_sources += gnome.mkenums_simple('dia-app-enums',
+                                    sources: ['dia-page-layout.h', 'exit_dialog.h'])
 
 #TODO: this is workaround for openbsd where libraries are in /usr/lib/local
 # Potential parent issues: https://github.com/mesonbuild/meson/issues/3570
@@ -102,7 +106,6 @@ diaapp_lib = both_libraries('diaapp',
                             dia_sources + [diamarshal_h, config_h],
                             dependencies: [libgtk_dep, libxml_dep, libm_dep, libdia_dep, gtk_mac_dep],
                             link_args: dia_link_args,
-                            export_dynamic: true,  # some plugins require this.
                             include_directories: [configuration_inc])
 
 diaapp_dep = declare_dependency (sources: [config_h],

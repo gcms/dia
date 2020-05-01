@@ -178,6 +178,7 @@ EXPORTS
  data_render_paginated
  data_select
  data_set_active_layer
+ dia_diagram_data_get_active_layer
  data_string
  data_text
  data_unselect
@@ -531,13 +532,18 @@ EXPORTS
  get_paper_bmargin
  get_paper_info
  get_paper_lmargin
- get_paper_name
+ dia_paper_get_name
  get_paper_name_list
  get_paper_psheight
  get_paper_pswidth
  get_paper_rmargin
  get_paper_tmargin
- get_units_name_list
+
+ dia_unit_get_type
+ dia_unit_get_name
+ dia_unit_get_symbol
+ dia_unit_get_factor
+ dia_unit_get_digits
 
  group_create
  group_create_with_matrix
@@ -740,8 +746,9 @@ EXPORTS
 
  make_new_prop
  prefs_get_length_unit
- prefs_set_fontsize_unit
  prefs_set_length_unit
+ prefs_get_fontsize_unit
+ prefs_set_fontsize_unit
  prop_desc_find_real_handler
  prop_desc_insert_handler
  prop_desc_list_calculate_quarks

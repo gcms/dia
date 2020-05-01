@@ -41,11 +41,16 @@
 #include "menus.h"
 #include "widgets.h"
 
-/** Functions called on menu selects.
- *  Note that GTK (at least up to 2.12) doesn't disable the keyboard shortcuts
- *  when the menu is made insensitive, so we have to check the constrains again
- *  in the functions.
+/**
+ * SECTION:commands
+ *
+ * Functions called on menu selects.
+ *
+ * Note that GTK (at least up to 2.12) doesn't disable the keyboard shortcuts
+ * when the menu is made insensitive, so we have to check the constrains again
+ * in the functions.
  */
+
 #ifdef G_OS_WIN32
 /*
  * Instead of polluting the Dia namespace with windoze headers, declare the
@@ -172,12 +177,12 @@ file_new_callback (GtkAction *action)
   g_clear_object (&file);
 }
 
+
 void
 file_preferences_callback (GtkAction *action)
 {
-  prefs_show ();
+  dia_preferences_dialog_show ();
 }
-
 
 
 /* Signal handler for getting the clipboard contents */
@@ -464,7 +469,8 @@ static GtkTargetEntry target_entries[] = {
 #endif
 };
 
-/**
+
+/*
  * This gets called by Gtk+ if some other application is asking
  * for the clipboard content.
  */
